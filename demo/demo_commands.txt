@@ -1,0 +1,17 @@
+register --username alice --password 1234
+login --username alice --password 1234
+buy --currency USD --amount 10000
+update-rates
+show-rates --top 2
+buy --currency BTC --amount 0.05
+buy --currency ETH --amount 1
+show-portfolio
+get-rate --from USD --to BTC
+sell --currency BTC --amount 0.01
+show-portfolio --base EUR
+sell --currency SOL --amount 1
+sell --currency BTC --amount 5
+get-rate --from USD --to ABC
+show-rates --currency RUB
+logout
+exit
