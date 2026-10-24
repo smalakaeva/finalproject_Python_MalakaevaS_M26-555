@@ -1,32 +1,17 @@
 #!/bin/sh
-# Запись демо-сессии.
+# Запись демо-сессии: asciinema-ролик + текстовый транскрипт.
 #
-#   sh demo/record_demo.sh            - прогнать сценарий и обновить demo/demo_session.md
-#   sh demo/record_demo.sh asciinema  - записать demo/demo.cast через asciinema
+#   sh demo/record_demo.sh
 #
-# Сценарий команд: demo/demo_commands.txt
+# Сценарий команд лежит в demo/demo_commands.txt.
+# Перед записью стоит очистить data/users.json и data/portfolios.json (вписать []),
+# иначе команда register ответит, что имя пользователя уже занято.
 
 set -e
 cd "$(dirname "$0")/.."
 
-if [ "$1" = "asciinema" ]; then
-    asciinema rec demo/demo.cast --overwrite \
-        --command "uv run python main.py < demo/demo_commands.txt"
-    echo "Готово: demo/demo.cast (загрузить: asciinema upload demo/demo.cast)"
-    exit 0
-fi
+asciinema rec demo/demo.cast --overwrite --quiet \
+    --command "uv run python main.py < demo/demo_commands.txt"
 
-{
-    echo "# Демо-сессия ValutaTrade Hub"
-    echo
-    echo "Запись полного сценария работы: регистрация -> вход -> пополнение -> update-rates ->"
-    echo "покупка/продажа -> show-portfolio -> get-rate -> show-rates, а также обработка ошибок."
-    echo
-    echo "Сценарий команд лежит в \`demo/demo_commands.txt\`, запись сделана скриптом \`demo/record_demo.sh\`."
-    echo
-    echo '```console'
-    uv run python main.py < demo/demo_commands.txt
-    echo '```'
-} > demo/demo_session.md
-
-echo "Готово: demo/demo_session.md"
+python3 demo/cast_to_markdown.py
+echo "Готово: demo/demo.cast и demo/demo_session.md"

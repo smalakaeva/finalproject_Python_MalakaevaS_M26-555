@@ -260,13 +260,19 @@ ERROR 2026-10-24T21:10:53 SELL user='alice' currency='BTC' amount=5.0000 result=
 
 Полный сценарий (регистрация → вход → пополнение → update-rates → покупка/продажа →
 show-portfolio → get-rate → show-rates → ошибки) записан в
-[demo/demo_session.md](demo/demo_session.md).
+[demo/demo.cast](demo/demo.cast), текстовая версия той же сессии —
+в [demo/demo_session.md](demo/demo_session.md).
 
-Повторить запись или записать asciinema-версию:
+Посмотреть запись:
+
+```bash
+asciinema play demo/demo.cast
+```
+
+Перезаписать демо (сценарий команд — `demo/demo_commands.txt`):
 
 ```bash
 sh demo/record_demo.sh
-sh demo/record_demo.sh asciinema
 ```
 
 ## Как устроен код
