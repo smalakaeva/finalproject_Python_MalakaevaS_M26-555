@@ -1,0 +1,22 @@
+# окружение и сборка
+.venv/
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# логи
+logs/
+
+# секреты (ключ для ExchangeRate-API)
+.env
+
+# служебное
+.DS_Store
+.idea/
+.vscode/
+.ruff_cache/
+
+# текст задания
+задание.txt

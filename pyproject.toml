@@ -1,0 +1,37 @@
+[project]
+name = "finalproject-malakaevas-m26-555"
+version = "0.1.0"
+description = "ValutaTrade Hub - консольная платформа для отслеживания курсов и симуляции торговли валютами"
+readme = "README.md"
+authors = [
+    { name = "Малакаева София", email = "malakaevasofia@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "prettytable>=3.11.0",
+    "requests>=2.32.3",
+]
+
+[project.scripts]
+valutatrade = "valutatrade_hub.cli.interface:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+# пакет лежит в корне проекта, а не в src/
+module-root = ""
+module-name = "valutatrade_hub"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B"]
