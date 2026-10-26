@@ -1,17 +1,31 @@
+help
+currencies
 register --username alice --password 1234
 login --username alice --password 1234
 buy --currency USD --amount 10000
-update-rates
-show-rates --top 2
+update-rates --source coingecko
+show-rates --top 3
 buy --currency BTC --amount 0.05
 buy --currency ETH --amount 1
 show-portfolio
 get-rate --from USD --to BTC
 sell --currency BTC --amount 0.01
+show-portfolio
 show-portfolio --base EUR
+show-rates --currency RUB
+buy --currency USD --amount -100
+buy --currency USD --amount abc
+buy --currency USD
+buy --curency USD --amount 100
 sell --currency SOL --amount 1
 sell --currency BTC --amount 5
 get-rate --from USD --to ABC
-show-rates --currency RUB
+register --username alice --password 1234
+register --username bob --password 12
+login --username bob --password 1234
+login --username alice --password 0000
+balance
+update-rates
 logout
+show-portfolio
 exit

@@ -16,20 +16,20 @@
       "source": "ExchangeRate-API"
     },
     "BTC_USD": {
-      "rate": 80271.0,
-      "updated_at": "2026-10-24T18:20:26Z",
+      "rate": 79814.0,
+      "updated_at": "2026-10-26T04:25:37Z",
       "source": "CoinGecko"
     },
     "ETH_USD": {
-      "rate": 2324.13,
-      "updated_at": "2026-10-24T18:20:26Z",
+      "rate": 2309.3,
+      "updated_at": "2026-10-26T04:25:37Z",
       "source": "CoinGecko"
     },
     "SOL_USD": {
-      "rate": 100.67,
-      "updated_at": "2026-10-24T18:20:26Z",
+      "rate": 100.55,
+      "updated_at": "2026-10-26T04:25:37Z",
       "source": "CoinGecko"
     }
   },
-  "last_refresh": "2026-10-24T18:20:26Z"
+  "last_refresh": "2026-10-26T04:25:37Z"
 }
